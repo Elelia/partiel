@@ -21,9 +21,13 @@ class Role
     #[ORM\OneToMany(mappedBy: 'userRole', targetEntity: UserGarou::class)]
     private Collection $userGarous;
 
+    #[ORM\OneToMany(mappedBy: 'botRole', targetEntity: Bot::class)]
+    private Collection $bots;
+
     public function __construct()
     {
         $this->userGarous = new ArrayCollection();
+        $this->bots = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -67,6 +71,36 @@ class Role
             // set the owning side to null (unless already changed)
             if ($userGarou->getUserRole() === $this) {
                 $userGarou->setUserRole(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Bot>
+     */
+    public function getBots(): Collection
+    {
+        return $this->bots;
+    }
+
+    public function addBot(Bot $bot): self
+    {
+        if (!$this->bots->contains($bot)) {
+            $this->bots->add($bot);
+            $bot->setBotRole($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBot(Bot $bot): self
+    {
+        if ($this->bots->removeElement($bot)) {
+            // set the owning side to null (unless already changed)
+            if ($bot->getBotRole() === $this) {
+                $bot->setBotRole(null);
             }
         }
 
