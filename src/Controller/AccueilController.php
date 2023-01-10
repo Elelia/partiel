@@ -15,4 +15,23 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+
+    
+    // back
+    #[Route('/jeux', name: 'jeux')]
+    public function jouer(): Response
+    {
+        return $this->render('jeux/jeux.html.twig',[
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    #[Route('/bouton', name: 'VersJeux')]
+    public function bouton(): Response
+    {
+        return $this->render('jeux/bouton.html.twig',[
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
