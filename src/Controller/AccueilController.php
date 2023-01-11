@@ -34,4 +34,15 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+
+
+    // front
+      #[Route('/reglement', name: 'reglement')]
+    public function reglement(): Response
+    {
+        return $this->render('accueil/reglement.html.twig',[
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
