@@ -25,7 +25,11 @@ class Personnage
     #[ORM\ManyToOne(inversedBy: 'personnages')]
     private ?carte $carte = null;
 
+
     private ?int $nbvote = 0;
+
+    public int $vote = 0;
+
 
     public function getId(): ?int
     {
@@ -95,4 +99,35 @@ class Personnage
     {
         $this->nbvote = $nbvote;
     }
+
+     /* Get the value of vote
+     */ 
+    public function getVote()
+    {
+        return $this->vote;
+    }
+
+    /**
+     * Set the value of vote
+     *
+     * @return  self
+     */ 
+    public function setVote($vote)
+    {
+        $this->vote = $vote;
+
+        return $this;
+    }
+
+    public function getVoted($vote){
+        $vote ++;
+    }
+    public function resetVote($vote){
+         $vote = 0;
+    }
+    public function returnVote($vote){
+        return $vote;
+    }
+    
+
 }
