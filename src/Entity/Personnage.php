@@ -28,7 +28,7 @@ class Personnage
 
     private ?int $nbvote = 0;
 
-    public int $vote = 0;
+
 
 
     public function getId(): ?int
@@ -100,33 +100,12 @@ class Personnage
         $this->nbvote = $nbvote;
     }
 
-     /* Get the value of vote
-     */ 
-    public function getVote()
-    {
-        return $this->vote;
+    public function getVoted(?int $nbvote){
+        $nbvote ++;
     }
 
-    /**
-     * Set the value of vote
-     *
-     * @return  self
-     */ 
-    public function setVote($vote)
-    {
-        $this->vote = $vote;
-
-        return $this;
-    }
-
-    public function getVoted($vote){
-        $vote ++;
-    }
-    public function resetVote($vote){
-         $vote = 0;
-    }
-    public function returnVote($vote){
-        return $vote;
+    public function resetVote(?int $nbvote){
+         $nbvote = 0;
     }
     
 
