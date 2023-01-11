@@ -2,74 +2,35 @@
 :root {
 --violet: #d33bfd;
 }
-body {
-	background: 	salmon;}
+/*body {
+	background: url(https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://www.creadisiac.com/wp-content/uploads/2015/11/low_poly_background.jpg) center center / cover no-repeat ;
+}*/
+body{
+	background: #ddd2c5;
+}	
 .presentation {
 	padding: 30px 5%;
 	margin-top: 5%;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-}
-.presentation .product-presentation {
-	width: 100%;
-	flex-shrink: 3;
-}
+	justify-content: space-between;}
+	.image- {
+		text-align : center;}
+
+.card-body {
+	background: #ddd2c5	;	
+}		
 .presentation .product-presentation h1 {
 	margin: 0;
 	font-size: 4vw;
 	width: 80%;
-                          color: #e9e9e9;
+                          color: black;
+	text-align: center;
+	
 }
 
 .presentation .product-presentation p {
-	font-weight: 300;
-	color: #e9e9e9;
-}
-.presentation .product-presentation button {
-	margin-top: 20px;
-	padding: 15px 20px;
-	font-size: 15px;
-	border-radius: 10px;
-	border: none;
-	outline: none;
-	cursor: pointer;
-}
-.presentation .image-presentation img {
-	width: 100%;
-
-}
-.image- {
-                          text-align : center;
-}
-
-
-
-.first .product-presentation button:hover {
-	background-color: inherit;
+	font-weight: 800;
+	
 	color: black;
 }
-.main{
-                          margin: 20px;
-                          padding: 50px;
-                          }
-                          div.gallery {
-                          margin: 10px;
-                          border: 1px solid #ccc;
-                          float: left;
-                          width: 180px;
-                         
-                          }
-                          div.gallery:hover {
-                          border: 1px solid #777;
-                          }
-                          div.gallery img {
-                          width: 100%;
-                          height: auto;
-                          }
-                          div.desc {
-                          padding: 15px;
-                          text-align: center;
-                          }
-
-   
