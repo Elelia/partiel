@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\PersonnageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PersonnageRepository;
+use Doctrine\ORM\EntityManagerInterface;
 
 #[ORM\Entity(repositoryClass: PersonnageRepository::class)]
 class Personnage
@@ -108,5 +109,17 @@ class Personnage
          $nbvote = 0;
     }
     
+    
+    public function giveCard($listPerso)
+    {
+      $salut = PersonnageRepository::findAllPersonnage();
+      $tableauIdCarte = array(1,1,2,2,2,2,2,3);
+      foreach ($listPerso as $perso) {
+        $taille = sizeof($tableauIdCarte);
+        $i = rand(0,$taille);
+        $perso.setCarte() = $tableauIdCarte[$i];
+        unset($tableauIdCarte[$i]);
+      }
+    }
 
-}
+  }

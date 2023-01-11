@@ -2,8 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\LoupgarouRepository;
+use App\Entity\Personnage;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\LoupgarouRepository;
+use Doctrine\Persistence\ManagerRegistry;
+
 
 #[ORM\Entity(repositoryClass: LoupgarouRepository::class)]
 class Loupgarou extends Personnage

@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Personnage;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Personnage>
@@ -19,6 +20,11 @@ class PersonnageRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Personnage::class);
+    }
+
+    public function findAllPersonnage(EntityManagerInterface $entityManager){
+      $listPerso = $entityManager->getRepository(Personnage::class)->findAll();
+      return $listPerso;
     }
 
     public function save(Personnage $entity, bool $flush = false): void
